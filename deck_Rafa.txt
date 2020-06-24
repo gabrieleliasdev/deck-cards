@@ -1,0 +1,44 @@
+Rafa,
+
+- Abusei dos prints, para conduzir minha linha de racioncinio na construção do game
+- Utilizei "global" para utilizar as variaveis user_name e table nas demais funções
+- Incluir os """ para leitura do código
+- Centralizei a sequência das demais funções na primeira def.
+
+- Chossing_table:
+  - Permite ao usuário que escolha o número de bot.
+  - Condicionei os controladores (if,elif,else) como numeral
+  - Resignifiquei o "res" em table = input
+  - Precisei determinar que esse numeral fosse reconhecido como int. - int(input())
+
+- choosing_players
+  - Define o usuário como fixo na list selected_players
+  - Substituir o numero int. utilizado em nosso exercicio pela variavel table = int(input)) \o/,rs
+  - Optei pelo random.choice para proporcionar ao jogador essa dinâmica de bot players.
+  - No len precisei adicionar ao table "+ 1", que representa a constante (o ususário)
+  - Diferente do pop, o random requer a list sem [] e virgula,
+    e caso deixe "" em cada string ele identifica com uma só, por isso só utlizei "" no inicio e fim.
+
+- choosinf_cards
+  - No print cards para os usuário eu deixei assim naipes_cards.split(',,,'), organizado por naipe.
+  - Não consegue que o print das cartas saissem sem >> ["('A♠ << esses caracteres tanto no inicio como no fim.
+  - Para random foi naipes_cards.split(' '), evitar caracteres, a
+  - Se seu definesse a variavel cards = naipes_cards.split(',,,'), o random apresentaria erro,
+    por isso mantive .spli(' '), sem separar.
+  - Utilizei rando.sample pois queria mais de 01 sorteio aleatório, no caso 02 cartas.
+
+Problema:
+>>> Como faço para fornecer ao code os botplayers da lista {selected_players}, sorteados aleatoriamente?
+Pois preciso associar aos bots as cartas sorteadas também.
+
+Tipo como eu fiz no table = int(input()) em choosing_table
+... onde o direcionei para choosing_players >> while len(selected_players) != table + 1
+
+Após associar as cartas aos bots assim como fiz ao usuário...
+... estabelecerei uma regra de valor das cartas conforme a regra
+... definirei função de soma que ocorrerá como loop em cada partida.
+
+Após essa função choosing_cards, virá a próxima que é a distribuição de +1 carta junto com as condições/regras.
+
+Orientação:
+- Implantei o pop(), no random.choice/append > choosing_players = Evitando um random repetido de players.

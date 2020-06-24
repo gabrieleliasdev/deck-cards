@@ -1,0 +1,13 @@
+21 ou Blackjack
+
+O objetivo é somar uma pontuação mais próxima de 21 pontos, sem ultrapassar esse valor, de acordo com a seguinte distribuição:
+
+2 a 10: valor facial;
+Figuras: 10 pontos;
+Ás: 1 ou 11 pontos.
+
+O jogador aposta contra a casa. O croupier dá duas cartas viradas para cima para cada jogador e pega uma para si virada para baixo e outra virada para cima.
+
+Os jogadores avaliam seus pontos e decidem se querem mais uma carta. Se a pontuação estourar 21 pontos, o jogador perde.
+
+Quando todos que ainda estão abaixo de 21 decidem parar, o croupier revela sua segunda carta. Se as mesmas apresentadas pelo croupier somarem menos de 17 pontos, ele é obrigado a pegar mais cartas até atingir pelo menos 17 ou estourar 21. Quem ficar mais perto de 21 pontos ganha a rodada.
