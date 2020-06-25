@@ -9,13 +9,13 @@ def playingBlackjack():
   Returns:
       def: will be performed
   """
-  welcome_blackjack(str)
+  welcome_blackjack('user_name')
   rules_blackjack('a', 'b')
-  choosing_table(int)
-  choosing_players('ENTER')
-  choosing_cards('ENTER')
-  round_cards('ENTER')
-  check_points('ENTER')
+  choosing_table('tables')
+  choosing_players('players')
+  choosing_cards('cards')
+  round_cards('round')
+  check_points('points')
   
   return print("\nEnd of game!\n")
 
@@ -132,7 +132,7 @@ def choosing_table(int):
     print_mensage()
     choosing_table(int)
 
-def choosing_players(ENTER):
+def choosing_players(players):
   """Radom choice of bot players
 
   Args:
@@ -171,7 +171,7 @@ def choosing_players(ENTER):
   
   return
 
-def choosing_cards(ENTER):
+def choosing_cards(cards):
   """Random card distribution from 02 to 02 plus sum of points
   
   While + if
@@ -251,7 +251,7 @@ def choosing_cards(ENTER):
 
   return
 
-def round_cards(ENTER):
+def round_cards(round):
 
   print(dedent("""
               Very good! ツ
@@ -333,7 +333,7 @@ def round_cards(ENTER):
 
   return
 
-def check_points(ENTER):
+def check_points(points):
   """Sum of points and definition of winner and loser"""
 
   print("Please, press 'ENTER', to proceed.")
