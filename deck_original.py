@@ -13,9 +13,9 @@ def playingBlackjack():
   rules_blackjack('a', 'b')
   choosing_table(int)
   choosing_players('ENTER')
-  choosing_cards()
-  round_cards()
-  check_points()
+  choosing_cards('ENTER')
+  round_cards('ENTER')
+  check_points('ENTER')
   
   return print("\nEnd of game!\n")
 
@@ -164,14 +164,14 @@ def choosing_players(ENTER):
   print(dedent(f"""
               Excellent!
               The table is complete, consisting of {table+1} participants 👥: {' '.join(selected_players)}
-              Please, press 'ENTER', to proceed.\n
+              Please, press 'ENTER', to proceed.
               """))
   
   input('▶▶▶ ENTER')
   
   return
 
-def choosing_cards():
+def choosing_cards(ENTER):
   """Random card distribution from 02 to 02 plus sum of points
   
   While + if
@@ -251,7 +251,7 @@ def choosing_cards():
 
   return
 
-def round_cards():
+def round_cards(ENTER):
 
   print(dedent("""
               Very good! ツ
@@ -333,7 +333,7 @@ def round_cards():
 
   return
 
-def check_points():
+def check_points(ENTER):
   """Sum of points and definition of winner and loser"""
 
   print("Please, press 'ENTER', to proceed.")
