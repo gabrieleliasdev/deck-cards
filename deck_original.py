@@ -7,7 +7,7 @@ def playingBlackjack():
   """I order sequence of my functions
 
   Returns:
-      str : will be performed
+      def: will be performed
   """
   welcome_blackjack(str)
   rules_blackjack('a', 'b')
