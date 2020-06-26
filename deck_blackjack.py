@@ -9,9 +9,9 @@ def playingBlackjack():
   Returns:
       def: will be performed
   """
-  welcome_blackjack('user_name')
+  welcome_blackjack('str')
   rules_blackjack('a', 'b')
-  choosing_table('tables')
+  choosing_table('int')
   choosing_players('players')
   choosing_cards('cards')
   round_cards('round')
@@ -19,7 +19,7 @@ def playingBlackjack():
   
   return print("\nEnd of game!\n")
 
-def welcome_blackjack(str):
+def welcome_blackjack(name):
   """Will welcome and collect the user name
 
   Returns:
@@ -91,17 +91,15 @@ def rules_blackjack(a: str, b:str):
                 Well, now that you've consulted the rules, press 'ENTER' to proceed.
                 """))
     
-    str(input("▶▶▶ ")).strip().title()
+    str(input("▶▶▶ ENTER")).strip().title()
 
     print('\nExcellent choice! Let us proceed then.\n')
-
-    return
-
+    
   else:
     print_mensage()
     rules_blackjack('a', 'b')
 
-def choosing_table(int):
+def choosing_table(tables):
   """Will choose the numbers of players
 
   Returns:
@@ -117,7 +115,7 @@ def choosing_table(int):
               """))
 
   global table
-  table = int(input('▶▶▶ '))
+  table = int(input('▶▶▶ ENTER'))
 
   if table in (1, 2, 3, 4):
     print(dedent(f"""
@@ -125,9 +123,7 @@ def choosing_table(int):
                 \033[4mYou want to play with \033[1m{table+1}\033[m\033[4m more participants.\033[m
                 We proceed to the table.
                 """))
-    
-    return
-
+      
   else:
     print_mensage()
     choosing_table(int)
