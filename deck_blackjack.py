@@ -25,8 +25,8 @@ def welcome_blackjack(name):
   Returns:
       str: Will replicate the user name
   """
-  print('{:*^126}'.format('\n*** \033[7:30mWelcome to the game Blackjack!\033[m ***\n'),
-       f"\n{' '*20}Gabriel Elias© 🇧🇷")
+  wellcome_print = ('\n*** \033[7:30mWelcome to the game Blackjack!\033[m ***\n')
+  print(f"{wellcome_print:*^126}\n{' '*20}Gabriel Elias© 🇧🇷")
   
   print(dedent(f"""                
                   My name is Jarvis, I'm the dealer.😷
@@ -56,13 +56,13 @@ def rules_blackjack(a: str, b:str):
               [b] See rules
               """))
 
-  res = str(input("▶▶▶ ")).strip().lower()
+  res = str(input("▶▶▶ ")).strip().lower()[0]
 
   if res == 'a':
     print(dedent(f"""
                 Great! Let's proceed to table selection!\n
                 *** \033[7:30m. . . processing information . . .\033[m ***\n
-                """))
+                """), end="")
     sleep(2)
 
   elif res == 'b':
@@ -115,11 +115,11 @@ def choosing_table(tables):
               """))
 
   global table
-  table = int(input('▶▶▶ ENTER'))
+  table = int(input("▶▶▶ "))
 
   if table in (1, 2, 3, 4):
     print(dedent(f"""
-                I understand
+                I understand.
                 \033[4mYou want to play with \033[1m{table+1}\033[m\033[4m more participants.\033[m
                 We proceed to the table.
                 """))
@@ -134,9 +134,7 @@ def choosing_players(players):
   Args:
       ENTER (str): Confirmation
   """
-  print("Please, press 'ENTER' to confirm your participation\n")
-
-  input("▶▶▶ ENTER")
+  input("Please, press 'ENTER' to confirm your participation\n\n▶▶▶ ENTER")
   
   print(f"\n👤 Mr.{user_name}, joined this table as a participant")
   sleep(1)
@@ -196,7 +194,7 @@ def choosing_cards(cards):
               ╠ Suits of Clubs = {nps2}
               ╠ Suits of Hearts = {nps3}
               ╚ Suits of Diamonds = {nps4}
-              """))
+              """), end="")
   sleep(2)
 
   while len(selected_cards) != table +1:
@@ -205,9 +203,12 @@ def choosing_cards(cards):
       selected_cards.append(next_c)
       {len(selected_cards)}
 
-  print("📌 Print below is optional\nSummary of Choosing Cards:")
+  print(dedent("""
+              \n📌 Print below is optional
+              \nSummary of Choosing Cards:
+              """), end="")
   for c in range(0, table+1):
-    print("Participant: {} | Card hand: {}".format(selected_players[c],' '.join(selected_cards[c])))
+    print(f"Participant: {selected_players[c]} | Card hand: {''.join(selected_cards[c])}")
   sleep(1)
 
   points = []
@@ -235,14 +236,15 @@ def choosing_cards(cards):
     pts = "{}".format(int(v) + int(v1))
     points += [pts]
 
-  print("\n📌 Print below is optional\nFul summary of Choosing Cards:")
+  print(dedent("""
+              \n📌 Print below is optional
+              \nFul summary of Choosing Cards:
+              """), end="")
   for c in range(0, table+1):
-    print("Participant: {} | Card hand: {} | Points: {}"
-          .format(selected_players[c],' '.join(selected_cards[c]), points[c]))
-  sleep(1)
+    print(f"Participant: {selected_players[c]} | Card hand: {' '.join(selected_cards[c])} | Points: {points[c]}")
+    sleep(1)
 
-  print("\nMr.{}, this is your cards {}, that correspond to {} points."
-        .format(user_name, ' '.join(selected_cards[0]), points[0]))
+  print(f"\nMr.{user_name}, this is your cards {' '.join(selected_cards[0])}, that correspond to {points[0]} points.")
   sleep(2)
 
   return
@@ -255,8 +257,8 @@ def round_cards(round):
               Please, press 'ENTER', to proceed.
               """))
   
-  input('▶▶▶ ENTER')
-
+  input("▶▶▶ ENTER")
+  
   hand_cards = " "
   hand_list = hand_cards.split()
 
@@ -269,14 +271,13 @@ def round_cards(round):
     {len(hand_list)}
 
   print(dedent("""
-              📌 Print below is optional
+              📌 Print below is optional\n
               Summary of Round Cards:
-              """))
+              """), end="")
   
   for c in range(0, table+1):
-    print("Participant: {} | Card hand: {}"
-    .format(selected_players[c],hand_list[c]))
-  sleep(1)
+    print(f"Participant: {selected_players[c]} | Card hand: {hand_list[c]}")
+    sleep(1)
 
   global points1
   
@@ -314,17 +315,15 @@ def round_cards(round):
     points1 += [p]
 
   print(dedent("""
-              📌 Print below is optional
-              Full summary of Round Cards:
-              """))
+              \n📌 Print below is optional
+              \nFull summary of Round Cards:
+              """), end="")
 
   for c in range(0, table+1):
-    print("Participant: {} | Card hand: {} | Points: {}"
-          .format(selected_players[c], hand_list[c], points1[c]))
+    print(f"Participant: {selected_players[c]} | Card hand: {hand_list[c]} | Points: {points1[c]}")
   sleep(1)
 
-  print("\nMr.{}, this is your cards {}, that correspond to {} points.\n"
-        .format(user_name, ' '.join(hand_list[0]), points1[0]))
+  print(f"\nMr.{user_name}, this is your cards {hand_list[0]}, that correspond to {points1[0]} points.\n")
   sleep(2)
 
   return
@@ -332,7 +331,7 @@ def round_cards(round):
 def check_points(points):
   """Sum of points and definition of winner and loser"""
 
-  print("Please, press 'ENTER', to proceed.")
+  print("Please, press 'ENTER', to proceed.\n")
   
   input('▶▶▶ ENTER')
 
